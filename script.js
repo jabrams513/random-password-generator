@@ -7,15 +7,15 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input
 // Ask for password length and validate if the length falls within the range of the prompt
 function writePassword() {
-  let promptedLength;
+  let promptedLength = parseInt(prompt("How many characters would you like in your password? You may have between 8 and 128 characters."));
+  console.log(promptedLength)
   let validLength = false;
-  while (!validLength) {
-    promptedLength = prompt("How many characters would you like in your password? You may have between 8 and 128 characters.");
-    if (promptedLength >= 8 && promptedLength <= 128) {
-      validLength = true;
-    } else if (promptedLength === false) {
-      // break;
-    }
+  if (promptedLength < 8 || promptedLength > 128 || isNaN(promptedLength)) {
+    alert("Password length must be greater than 8 and less than 128.")
+    return;
+  }
+  else {
+    validLength = true
   }
 
   // If length is in valid range, ask a series of questions regarding which character types to include

@@ -63,11 +63,11 @@ const generatePassword = (promptedLength, lowercase, uppercase, numeric, special
   }
   // Randomly select characters until reaching the prompted length
   else {
-    let Password = ""
-    for (let i = 0; i <= promptedLength; i++) {
+    let password = ""
+    for (let i = 0; i < promptedLength; i++) {
       let randomIndex = Math.floor(Math.random() * selectedCharTypes.length);
-      Password += selectedCharTypes.substring(randomIndex, randomIndex + 1);
+      password += selectedCharTypes[randomIndex]
     }
-    return Password;
+    return password;
   }
 }

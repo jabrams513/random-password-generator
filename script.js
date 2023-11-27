@@ -31,7 +31,7 @@ function writePassword() {
 }
 
 // Define strings available for use in character sets
-const generatePassword = (promptedLength, lowercase, uppercase, numeric, special) => {
+function generatePassword (promptedLength, lowercase, uppercase, numeric, special) {
   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numericChars = "0123456789";
